@@ -1,9 +1,9 @@
 #include <stdio.h>
+
 void main()
 {
 	int x;
 	x = 0;
-	clrscr();
 	printf("Enter Choice (1 - 3): ");
 	scanf("%d", &x);
 	if (x == 1)
