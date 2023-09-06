@@ -4,6 +4,7 @@ void main()
 	int productcode;
 	float orderamount, rate = 0.0;
 	printf("\nPlease enter the product code: ");
+	
 	scanf("%d", &productcode);
 	printf("Please enter the order amount: ");
 	scanf("%f", &orderamount);
@@ -31,6 +32,7 @@ void main()
 		else if (orderamount >= 2500)
 		rate = 0.05;
 	}
+	
 	orderamount -= orderamount * rate;
 	printf( "The net order amount is % .2f \n", orderamount);
 }
