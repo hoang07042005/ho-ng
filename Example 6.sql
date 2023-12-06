@@ -98,7 +98,7 @@ WHERE BusinessEntityID in (
 )
 SELECT * FROM HumanResources.Employee
 
-SELECT * FROM Person. Person P
+SELECT * FROM Person.Person P
 WHERE EXISTS (
 	SELECT BusinessEntityID
 	FROM HumanResources.Employee
@@ -131,17 +131,17 @@ SELECT FROM Person.PersonPhone
 SELECT Per.Business EntityID, Per.FirstName, Phone. PhoneNumber 
 	FROM Person. Person Per 
 INNER JOIN Person.PersonPhone Phone ON
-	Per.Business EntityID = Phone.Business EntityID
+	Per.BusinessEntityID = Phone.BusinessEntityID
 
-SELECT Per.Business EntityID, Per.FirstName, Phone. PhoneNumber 
+SELECT Per.BusinessEntityID, Per.FirstName, Phone.PhoneNumber 
 FROM Person. Person Per 
 LEFT OUTER JOIN Person.PersonPhone Phone ON 
-	Per.Business EntityID Phone.Business EntityID
+	Per.BusinessEntityID = Phone.BusinessEntityID
 
-SELECT Per.Business EntityID, Per.FirstName, Phone. PhoneNumber 
+SELECT Per.BusinessEntityID, Per.FirstName, Phone.PhoneNumber 
 FROM Person. Person Per 
-RIGHT OUTER JOIN Person. PersonPhone Phone ON 
-	Per.Business EntityID Phone.Business EntityID
+RIGHT OUTER JOIN Person.PersonPhone Phone ON 
+	Per.BusinessEntityID = Phone.BusinessEntityID
 
 SELECT Person.Contact.
 FROM Person.Contact LEFT OUTER JOIN HumanResources.Employee ON 
@@ -149,5 +149,5 @@ FROM Person.Contact LEFT OUTER JOIN HumanResources.Employee ON
 
 
 SELECT c.*
-FROM Person.Contact AS C LEFT OUTER JOIN Human Resources. Employee AS E ON 
-C.ContactID= E.ContactID
+FROM Person.Contact AS C LEFT OUTER JOIN Human Resources.Employee AS E ON 
+C.ContactID=E.ContactID
