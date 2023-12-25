@@ -26,8 +26,8 @@ CREATE TABLE DangSachCacMatHang (
 
 INSERT INTO DangSachCacMatHang (MaSDH, ItemID, TenHang, MoTaHang, DonVi, Gia, SoLuong, ThanhTien)
  VALUES	(123, 1, 'Máy Tính T450', 'Máy nhập mới', 'Chiếc', 1000, 1, 1000),
-		(123, 2, 'Điện Thoại Nokia5670', 'Điện thoại đang hot', 'Chiếc', 200, 2, 400),
-		(123, 3, 'Máy In Samsung 450', 'Máy in đang ế', 'Chiếc', 100, 1, 100);
+	(123, 2, 'Điện Thoại Nokia5670', 'Điện thoại đang hot', 'Chiếc', 200, 2, 400),
+	(123, 3, 'Máy In Samsung 450', 'Máy in đang ế', 'Chiếc', 100, 1, 100);
 
 SELECT * FROM DangSachCacMatHang
 
