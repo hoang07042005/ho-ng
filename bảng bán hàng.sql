@@ -32,22 +32,3 @@ INSERT INTO DangSachCacMatHang (MaSDH, ItemID, TenHang, MoTaHang, DonVi, Gia, So
 SELECT * FROM DangSachCacMatHang
 
 
-SELECT DISTINCT NguoiDH FROM DonDatHang
-
-SELECT DISTINCT TenHang FROM DangSachCacMatHang
-
-
-
-SELECT * FROM DonDatHang ORDER BY NguoiDH
-
-SELECT * FROM DangSachCacMatHang ORDER BY Gia DESC
-
-SELECT TenHang,  SoLuong  FROM DangSachCacMatHang
-WHERE MaSDH IN (SELECT MaSDH FROM DonDatHang WHERE NguoiDH = 'Nguyễn Văn An');
-
-SELECT COUNT(DISTINCT NguoiDH) AS TotalCustomers FROM DonDatHang
-
-SELECT COUNT(DISTINCT TenHang) AS TotalItems FROM DangSachCacMatHang
-
-SELECT MaSDH , SUM(ThanhTien) AS OrderTotal FROM DangSachCacMatHang GROUP BY  MaSDH
-
