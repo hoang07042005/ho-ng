@@ -19,6 +19,7 @@ CREATE TABLE Groups (
 	LeaderID INT,
 	ProjectID INT, 
 	FOREIGN KEY (LeaderID) REFERENCES Employee (EmployeeID)
+	
 );
 INSERT INTO Groups
 VALUES (123, 'ABC', 1, '456'),
@@ -35,9 +36,13 @@ CREATE TABLE Project (
 	StartDate DATETIME,
 	EndDate DATETIME,
 	Period int,
-	Cost MONEY
+	Cost MONEY,
+	
 );
-
+INSERT INTO Project
+VALUES ('456', 'msa', '20131112', '20131212', 1, '123333'),
+		('567', 'vds', '20130101', '20130301', 2, '1343254'),
+		('678', 'gsa', '20120301', '20130601', 3, '3224523');
 
 
 
@@ -52,7 +57,10 @@ CREATE TABLE GroupDetail(
 	FOREIGN KEY (GroupID ) REFERENCES  Groups (GroupID ),
 	FOREIGN KEY (EmployeeID) REFERENCES Employee (EmployeeID)
 );
-
+INSERT INTO GroupDetail
+VALUES (123, 1, 'hoan thanh'),
+		(234, 2, 'hoan thanh'),
+		(345, 3, 'hoan thanh');
 
 
 SELECT * FROM Employee;
@@ -61,7 +69,26 @@ SELECT * FROM Project;
 SELECT * FROM GroupDetail;
 
 
-DROP TABLE Employee;
-DROP TABLE Groups;
-DROP TABLE Project;
-DROP TABLE GroupDetail;
+
+
+
+SELECT DISTINCT Name FROM Employee;
+
+SELECT E.*  FROM Employee AS E, Project AS P, Groups AS G, GroupDetail AS GD
+WHERE GD.GroupID = G.GroupID
+AND E.EmployeeID = GD.EmployeeID
+AND G.ProjectID = P.ProjectID
+AND P.ProjectName = 'msa'
+
+
+SELECT G.GroupName, COUNT(gd.EmployeeID) AS EmployeeCount
+FROM Groups G
+LEFT JOIN GroupDetail gd ON G.GroupID = GD.GroupID
+GROUP BY G.GroupName
+
+SELECT E.* FROM Employee E
+JOIN Groups G ON E.EmployeeID = G.LeaderID;
+
+
+ALTER TABLE Employee
+ALTER COLUMN Name NVARCHAR(100) NOT NULL;
