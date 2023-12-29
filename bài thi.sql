@@ -1,5 +1,3 @@
-﻿CREATE DATABASE EmployeeDB;
-USE EmployeeDB;
 
 CREATE TABLE Department (
     DepartId INT PRIMARY KEY,
