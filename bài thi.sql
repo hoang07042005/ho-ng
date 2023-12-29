@@ -33,7 +33,7 @@ SET Salary = Salary * 1.1
 SELECT * FROM Employee
 
 ALTER TABLE Employee
-ADD CONSTRAINT CheckSalary Check (Salary > 0)
+ADD CONSTRAINT Salary Check (Salary > 0)
 
 SELECT * FROM Department;
 SELECT * FROM Employee;
