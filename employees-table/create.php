@@ -101,5 +101,5 @@ $name_err = $address_err = $salary_err = "";
         </div>
     </div>
 </body>
-</html>
+</html>.
 

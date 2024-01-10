@@ -72,4 +72,4 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
         </div>
     </div>
 </body>
-</html>
+</html>.
